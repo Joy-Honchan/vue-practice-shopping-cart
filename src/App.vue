@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import MyComponent from './components/MyComponent.vue';
+import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
-  <div>
+  <Navbar />
+  <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -12,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <MyComponent /> -->
 </template>
 
 <style scoped>
