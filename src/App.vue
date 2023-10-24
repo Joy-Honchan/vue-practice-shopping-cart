@@ -6,6 +6,7 @@ import Navbar from './components/Navbar.vue'
 
 <template>
   <Navbar />
+  <v-btn> Button </v-btn>
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
