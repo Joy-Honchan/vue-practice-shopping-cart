@@ -1,0 +1,30 @@
+[
+    {
+        "id": 250,
+        "name": "Camera",
+        "age": "2 years",
+        "description": "A camera is a device that captures images and videos",
+        "status": 0
+    },
+    {
+        "id": 211,
+        "name": "Boat",
+        "age": "5 years",
+        "description": "A boat is a watercraft that is powered by water",
+        "status": 0
+    },
+    {
+        "id": 157,
+        "name": "Skateboard",
+        "age": "3 months",
+        "description": "A skateboard is a long, narrow board with wheels attached to it",
+        "status": 0
+    },
+    {
+        "id": 183,
+        "name": "Van",
+        "age": "1 year",
+        "description": "A van is a vehicle that is used for transportation",
+        "status": 0
+    }
+]

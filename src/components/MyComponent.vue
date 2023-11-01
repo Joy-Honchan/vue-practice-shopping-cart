@@ -54,6 +54,9 @@ onUpdated(() => {
   <!-- <button @click="show = !show">{{ show ? 'Hide' : 'Show' }}</button>
   <p v-if="show">Here I am</p> -->
   <!-- <h1>{{ count.count }}</h1> -->
+  <!-- <slot><h6>Nothing to see here</h6></slot> -->
+  <slot name="header"><h6>Nothing to see here</h6></slot>
+  <!-- <slot><h6>Hehe</h6></slot> -->
   <div class="container">
     <h1>A cookie costs $2</h1>
     <label>Cookie</label><input v-model="inputValue" /> <label>Price $</label
