@@ -1,33 +1,25 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import products from '../data/Products.json'
+import { ref } from 'vue'
 import { ProductType } from '../data/type.ts'
 
-defineProps<{ title: string }>()
+defineProps<{ cartItems: ProductType[] }>()
+const emit = defineEmits(['removeItem'])
 
-type ItemType = ProductType & {
-  count: number
+const pressRemove = (id: number) => {
+  emit('removeItem', id)
 }
 
 const drawer = ref(false)
 const handleDrawer = () => {
   drawer.value = !drawer.value
 }
-
-const cartItems: ItemType[] = reactive(
-  products.map((item) => ({
-    ...item,
-    count: 0
-  }))
-)
 </script>
 
 <template>
   <v-app-bar color="info" prominent>
-    <v-toolbar-title class="text-h5">{{ title }}</v-toolbar-title>
+    <v-toolbar-title class="text-h5">Used Treasure</v-toolbar-title>
 
     <v-btn>Home</v-btn>
-    <v-btn>Products</v-btn>
     <v-btn>Purchase</v-btn>
 
     <v-spacer></v-spacer>
@@ -60,6 +52,7 @@ const cartItems: ItemType[] = reactive(
             color="grey-lighten-1"
             icon="mdi-delete"
             variant="text"
+            @click.stop="pressRemove(item.id)"
           ></v-btn>
         </template>
       </v-list-item>
