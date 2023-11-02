@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { ProductType } from '../../data/type'
+import { ProductType } from '../data/type'
 
 defineProps<{ itemData: ProductType[] }>()
+
+const emit = defineEmits<{
+  (e: 'addToCart', id: number): void
+}>()
 </script>
 
 <template>
@@ -32,6 +36,7 @@ defineProps<{ itemData: ProductType[] }>()
               variant="outlined"
               class="font-weight-medium"
               prepend-icon="mdi-cart-plus"
+              @click.stop="emit('addToCart', item.id)"
             >
               <template v-slot:prepend>
                 <v-icon color="primary"></v-icon>

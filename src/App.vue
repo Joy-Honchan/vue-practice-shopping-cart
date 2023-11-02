@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.vue'
 import products from './data/Products.json'
 import { ProductType } from './data/type.ts'
 
-import Home from './components/Home/Home.vue'
+import ItemGrid from './components/ItemGrid.vue'
 
 const itemData = reactive<ProductType[]>(products)
 const cartItems = computed(() => {
@@ -15,17 +15,33 @@ const handleRemoveItem = (id: number) => {
   const removeItem = itemData.find((item) => item.id === id)
   removeItem ? (removeItem.status = 1) : null
 }
+
+const handleAddtoCart = (id: number) => {
+  const addItem = itemData.find((item) => item.id === id)
+  addItem ? (addItem.status = 0) : null
+}
 </script>
 
 <template>
-  <!-- <v-card> -->
   <v-layout class="bg-background">
     <Navbar :cartItems="cartItems" @removeItem="handleRemoveItem" />
     <v-main style="min-height: 100vh">
-      <Home :itemData="itemData" />
+      <v-responsive :aspect-ratio="16 / 9" style="max-height: 550px">
+        <v-card
+          class="h-100 pa-4 pa-md-8"
+          image="https://picsum.photos/id/20/3600"
+        >
+          <h1>One Man's Trash is Another Man's Treasure</h1>
+          <p>Discover great second-handed items</p>
+        </v-card>
+      </v-responsive>
+
+      <h2>Recommended</h2>
+      <v-divider></v-divider>
+
+      <ItemGrid :itemData="itemData" @addToCart="handleAddtoCart" />
     </v-main>
   </v-layout>
-  <!-- </v-card> -->
 </template>
 
 <style scoped></style>
