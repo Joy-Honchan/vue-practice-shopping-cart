@@ -10,8 +10,9 @@ const cartItems = computed(() => {
 })
 
 const handleRemoveItem = (id: number) => {
-  console.log('id', id)
-  // itemData.find((item) => item.id === id)?.status === 1
+  const removeItem = itemData.find((item) => item.id === id)
+  removeItem ? (removeItem.status = 1) : null
+  // console.log('remove item', removeItem)
 }
 </script>
 

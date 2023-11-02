@@ -3,7 +3,8 @@ import { ref } from 'vue'
 import { ProductType } from '../data/type.ts'
 
 defineProps<{ cartItems: ProductType[] }>()
-const emit = defineEmits(['removeItem'])
+
+const emit = defineEmits<{ (e: 'removeItem', id: number): void }>()
 
 const pressRemove = (id: number) => {
   emit('removeItem', id)
