@@ -12,7 +12,7 @@ import '@mdi/font/css/materialdesignicons.css'
 const myCustomLightTheme = {
     dark: false,
     colors: {
-        background: '#FFFFFF',
+        background: '#caeefc',
         surface: '#FFFFFF',
         primary: '#FB8C00',
         'primary-darken-1': '#3700B3',
