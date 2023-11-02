@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.vue'
 import products from './data/Products.json'
 import { ProductType } from './data/type.ts'
 
-import ItemGrid from './components/ItemGrid.vue'
+import ItemCard from './components/ItemCard.vue'
 
 const itemData = reactive<ProductType[]>(products)
 const cartItems = computed(() => {
@@ -39,7 +39,16 @@ const handleAddtoCart = (id: number) => {
       <h2>Recommended</h2>
       <v-divider></v-divider>
 
-      <ItemGrid :itemData="itemData" @addToCart="handleAddtoCart" />
+      <v-container>
+        <v-row>
+          <ItemCard
+            v-for="item in itemData"
+            :key="item.id"
+            :item="item"
+            @addToCart="handleAddtoCart"
+          />
+        </v-row>
+      </v-container>
     </v-main>
   </v-layout>
 </template>
