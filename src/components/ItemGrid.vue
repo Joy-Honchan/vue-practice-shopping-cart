@@ -33,14 +33,12 @@ const emit = defineEmits<{
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn
-              variant="outlined"
+              color="info"
+              variant="elevated"
               class="font-weight-medium"
-              prepend-icon="mdi-cart-plus"
+              prepend-icon="mdi-plus"
               @click.stop="emit('addToCart', item.id)"
             >
-              <template v-slot:prepend>
-                <v-icon color="primary"></v-icon>
-              </template>
               Add to Cart
             </v-btn>
           </v-card-actions>

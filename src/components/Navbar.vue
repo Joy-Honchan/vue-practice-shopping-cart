@@ -17,22 +17,26 @@ const handleDrawer = () => {
 </script>
 
 <template>
-  <v-app-bar color="info" prominent>
-    <v-toolbar-title class="text-h5">Used Treasure</v-toolbar-title>
-
-    <v-btn>Home</v-btn>
-    <v-btn>Purchase</v-btn>
-
+  <v-app-bar color="primary" prominent>
     <v-spacer></v-spacer>
 
     <v-btn
-      variant="text"
+      variant="elevated"
+      color="info"
       @click.stop="handleDrawer"
-      icon="mdi-cart-outline"
-    ></v-btn>
+      prepend-icon="mdi-cart-outline"
+    >
+      My Cart
+    </v-btn>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="drawer" location="right" temporary>
+  <v-navigation-drawer
+    color="secondary"
+    width="300"
+    v-model="drawer"
+    location="right"
+    temporary
+  >
     <v-list>
       <v-list-item
         class="my-2"
