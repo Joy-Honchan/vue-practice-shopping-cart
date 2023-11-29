@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { ProductType } from '../data/type.ts'
+import logosrc from '../assets/logo.png'
 
 defineProps<{ cartItems: ProductType[] }>()
 
@@ -18,6 +19,7 @@ const handleDrawer = () => {
 
 <template>
   <v-app-bar color="primary" prominent>
+    <v-img :src="logosrc" />
     <v-spacer></v-spacer>
 
     <v-btn
