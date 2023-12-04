@@ -23,16 +23,27 @@ const handleAddtoCart = (id: number) => {
 </script>
 
 <template>
-  <v-layout class="bg-background">
+  <v-app class="bg-background">
     <Navbar :cartItems="cartItems" @removeItem="handleRemoveItem" />
     <v-main style="min-height: 100vh">
       <v-responsive :aspect-ratio="16 / 9" style="max-height: 550px">
-        <v-card
-          class="h-100 pa-4 pa-md-8"
-          image="https://picsum.photos/id/20/3600"
-        >
-          <h1>One Man's Trash is Another Man's Treasure</h1>
-          <p>Discover great second-handed items</p>
+        <v-card class="h-100">
+          <v-img
+            cover
+            lazy-src="https://picsum.photos/id/20/100"
+            src="https://picsum.photos/id/20/3600"
+          >
+            <h1>One Man's Trash is Another Man's Treasure</h1>
+            <p>Discover great second-handed items</p>
+            <template v-slot:placeholder>
+              <div class="d-flex align-center justify-center fill-height">
+                <v-progress-circular
+                  color="grey-lighten-4"
+                  indeterminate
+                ></v-progress-circular>
+              </div>
+            </template>
+          </v-img>
         </v-card>
       </v-responsive>
 
@@ -50,7 +61,7 @@ const handleAddtoCart = (id: number) => {
         </v-row>
       </v-container>
     </v-main>
-  </v-layout>
+  </v-app>
 </template>
 
 <style scoped></style>
